@@ -1,18 +1,6 @@
-import { HTMLAttributes, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 import { Icon } from "@iconify/react";
-
-type InputType = "email" | "password" | "number" | "text" | "tel" | "url";
-
-interface Props
-  extends Omit<HTMLAttributes<HTMLInputElement>, "type">,
-    PropsWithChildren {
-  type?: InputType;
-  label?: string;
-  wrapperClassName?: string;
-  labelClassName?: string;
-  icon: string;
-}
+import { InputProps } from "./input-props.ts";
 
 export const Input = ({
   type = "text",
@@ -23,9 +11,9 @@ export const Input = ({
   className,
   children,
   ...rest
-}: Props) => {
+}: InputProps) => {
   const wrapperClasses = twMerge(
-    "flex flex-wrap p-2 mx-2 mb-2 select-none",
+    "flex flex-wrap p-2 mx-2 select-none",
     wrapperClassName
   );
 
@@ -50,8 +38,8 @@ export const Input = ({
             icon={icon}
             className="absolute left-0 top-0 h-full py-1.5 px-1 w-10 cursor-pointer hover:scale-110 transition-transform"
           />
-          {children}
         </div>
+        {children}
       </label>
     </div>
   );
