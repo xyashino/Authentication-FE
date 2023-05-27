@@ -11,6 +11,9 @@ export default defineConfig({
       "@layout": resolve(__dirname, "./src/components/layout"),
       "@ui": resolve(__dirname, "./src/components/ui"),
       "@pages": resolve(__dirname, "./src/pages"),
+      "@assets": resolve(__dirname, "./src/assets"),
+      "@forms": resolve(__dirname, "./src/components/forms"),
+      "@components": resolve(__dirname, "./src/components"),
     },
   },
 });
