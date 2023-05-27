@@ -31,7 +31,7 @@ export const TextArea = ({ description, className, ...rest }: Props) => {
   );
 
   return (
-    <label className="flex flex-wrap m-2 p-1 ">
+    <label className="flex flex-wrap m-2 p-1  w-full">
       {!!description && (
         <span className="w-full text-start indent-2 font-semibold capitalize text-gray-600 m-0 p-0 text-sm">
           {description}
