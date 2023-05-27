@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { Logo } from "../../UI/Logo/Logo.tsx";
+import { Logo } from "@ui/Logo/Logo.tsx";
 
 export const AuthenticationCard = ({ children }: PropsWithChildren) => {
   return (

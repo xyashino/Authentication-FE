@@ -1,5 +1,5 @@
-import { AuthenticationCard } from "../../components/layout/AuthenticationCard/AuthenticationCard.tsx";
-import { RegistrationForm } from "../../components/forms/RegistrationForm.tsx";
+import { AuthenticationCard } from "@components/layout/AuthenticationCard/AuthenticationCard.tsx";
+import { RegistrationForm } from "@components/forms/RegistrationForm.tsx";
 
 export const RegistrationPage = () => {
   return (

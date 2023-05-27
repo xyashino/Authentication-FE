@@ -1,5 +1,5 @@
-import { Logo } from "../Logo/Logo.tsx";
-import { Dropdown } from "../../Dropdown/Dropdown.tsx";
+import { Logo } from "@ui/Logo/Logo.tsx";
+import { Dropdown } from "@components/Dropdown/Dropdown.tsx";
 
 export const Header = () => {
   return (

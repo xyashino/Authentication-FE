@@ -1,4 +1,4 @@
-import { Avatar } from "../UI/Avatar/Avatar.tsx";
+import { Avatar } from "@ui/Avatar/Avatar.tsx";
 import { Icon } from "@iconify/react";
 import { useLayoutEffect, useRef, useState } from "react";
 import { DropdownMenu } from "./DropdownMenu.tsx";

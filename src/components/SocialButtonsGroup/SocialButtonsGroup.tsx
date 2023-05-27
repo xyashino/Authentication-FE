@@ -1,4 +1,4 @@
-import { SocialButton } from "../UI/SocialButton/SocialButton.tsx";
+import { SocialButton } from "@ui/SocialButton/SocialButton.tsx";
 
 export const SocialButtonsGroup = () => {
   return (

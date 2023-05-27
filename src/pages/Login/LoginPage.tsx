@@ -1,5 +1,5 @@
-import { AuthenticationCard } from "../../components/layout/AuthenticationCard/AuthenticationCard.tsx";
-import { LoginForm } from "../../components/forms/LoginForm.tsx";
+import { AuthenticationCard } from "@components/layout/AuthenticationCard/AuthenticationCard.tsx";
+import { LoginForm } from "@components/forms/LoginForm.tsx";
 
 export const LoginPage = () => {
   return (

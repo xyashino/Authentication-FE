@@ -1,6 +1,6 @@
-import { ValidationInput } from "../UI/Input/ValidationInput.tsx";
-import { Button } from "../UI/Button/Button.tsx";
-import { SocialButtonsGroup } from "../SocialButtonsGroup/SocialButtonsGroup.tsx";
+import { ValidationInput } from "@ui/Input/ValidationInput.tsx";
+import { Button } from "@ui/Button/Button.tsx";
+import { SocialButtonsGroup } from "@components/SocialButtonsGroup/SocialButtonsGroup.tsx";
 
 export const LoginForm = () => {
   return (
