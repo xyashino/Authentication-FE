@@ -26,7 +26,7 @@ export const TextArea = ({ description, className, ...rest }: Props) => {
   }, []);
 
   const textAreaClasses = twMerge(
-    "appearance-none scroll border-2 focus:border-emerald-700 rounded w-full p-2 text-gray-600 focus:outline-none text-sm  transition-colors min-w-12",
+    "bg-transparent appearance-none scroll border-2 focus:border-emerald-700 rounded w-full p-2 text-gray-600 focus:outline-none text-sm  transition-colors min-w-12",
     className
   );
 

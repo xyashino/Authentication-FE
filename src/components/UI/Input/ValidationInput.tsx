@@ -25,7 +25,7 @@ export const ValidationInput = ({
     <>
       <Input {...rest} className={baseClasses}>
         {hasError && (
-          <p className="relative w-full text-center text-red-500 font-bold uppercase text-sm -z-10">
+          <p className="relative w-full text-center text-red-500 font-bold uppercase text-sm">
             {errorMessage}
           </p>
         )}
