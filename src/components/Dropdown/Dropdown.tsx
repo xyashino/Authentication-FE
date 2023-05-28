@@ -16,9 +16,9 @@ export const Dropdown = () => {
   }, [isDropdownOpen]);
 
   return (
-    <div className="relative">
+    <div className="relative mr-8">
       <button
-        className="mr-8 h-full flex items-center hover:bg-gray-300 p-2 justify-around cursor-pointer w-full rounded"
+        className="mr-8 h-full flex items-center hover:bg-neutral-50/60 p-2 justify-around cursor-pointer w-full rounded-xl"
         onClick={() => setIsDropdownOpen(true)}
       >
         <Avatar />
