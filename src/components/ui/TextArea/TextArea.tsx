@@ -5,9 +5,15 @@ interface Props extends HTMLAttributes<HTMLTextAreaElement> {
   description?: string;
   value?: string;
   name?: string;
+  wrapperClassName?: string;
 }
 
-export const TextArea = ({ description, className, ...rest }: Props) => {
+export const TextArea = ({
+  description,
+  className,
+  wrapperClassName,
+  ...rest
+}: Props) => {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   useLayoutEffect(() => {
@@ -26,14 +32,19 @@ export const TextArea = ({ description, className, ...rest }: Props) => {
   }, []);
 
   const textAreaClasses = twMerge(
-    "bg-transparent appearance-none scroll border-2 focus:border-emerald-700 rounded w-full p-2 text-gray-600 focus:outline-none text-sm  transition-colors min-w-12",
+    "placeholder:font-bold placeholder:text-emerald-50/80 bg-transparent  appearance-none scroll border-emerald-50/50 border-2 focus:border-emerald-600 rounded-xl w-full px-4 py-2 text-gray-600 focus:outline-none text-sm  transition-colors min-w-12",
     className
   );
 
+  const labelClasses = twMerge(
+    "flex flex-wrap m-2 p-1  w-full",
+    wrapperClassName
+  );
+
   return (
-    <label className="flex flex-wrap m-2 p-1  w-full">
+    <label className={labelClasses}>
       {!!description && (
-        <span className="w-full text-start indent-2 font-semibold capitalize text-gray-600 m-0 p-0 text-sm">
+        <span className="w-full text-gray-600 pl-2 text-md uppercase font-bold cursor-pointer">
           {description}
         </span>
       )}
