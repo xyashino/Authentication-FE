@@ -2,7 +2,7 @@ import { twMerge } from "tailwind-merge";
 
 export const DropdownMenu = () => {
   const listStyles =
-    "border-b-2 p-1 hover:bg-emerald-800 hover:text-sky-50 font-bold uppercase text-gray-600 cursor-pointer transition-colors rounded px-2";
+    "text-lg border-b-2 p-1 hover:bg-emerald-800 hover:text-sky-50 font-bold uppercase text-gray-600 cursor-pointer transition-colors rounded px-2";
   return (
     <ul className="w-full text-sm">
       <li className={listStyles} role="menuitem">
