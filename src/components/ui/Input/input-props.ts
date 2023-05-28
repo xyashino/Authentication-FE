@@ -9,5 +9,5 @@ export interface InputProps
   label?: string;
   wrapperClassName?: string;
   labelClassName?: string;
-  icon: string;
+  icon?: string;
 }
