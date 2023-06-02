@@ -14,6 +14,7 @@ export default defineConfig({
       "@assets": resolve(__dirname, "./src/assets"),
       "@forms": resolve(__dirname, "./src/components/forms"),
       "@components": resolve(__dirname, "./src/components"),
+      "@enums": resolve(__dirname, "./src/enums"),
     },
   },
 });
