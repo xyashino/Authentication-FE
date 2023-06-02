@@ -1,6 +1,6 @@
 import { ValidationInput } from "@ui/Input/ValidationInput.tsx";
 import { Button } from "@ui/Button/Button.tsx";
-import { SocialButtonsGroup } from "@components/SocialButtonsGroup/SocialButtonsGroup.tsx";
+import { SocialButtonsGroup } from "@components/SocialButtons/SocialButtonsGroup.tsx";
 
 export const LoginForm = () => {
   return (
@@ -22,9 +22,9 @@ export const LoginForm = () => {
       <Button className="w-4/5">LOGIN</Button>
       <SocialButtonsGroup />
 
-      <p className="text-sm m-3 text-gray-700 pb-2 w-full text-center">
+      <p className="text-sm m-3 text-emerald-50/90 font-bold pb-2 w-full text-center">
         Don't have account yet?{" "}
-        <span className="font-bold ml-1 text-emerald-600 hover:underline cursor-pointer">
+        <span className="font-bold ml-1 text-emerald-800 hover:underline cursor-pointer transition-all uppercase">
           Register
         </span>
       </p>

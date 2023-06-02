@@ -1,5 +1,6 @@
 import { AuthenticationCard } from "@components/layout/AuthenticationCard/AuthenticationCard.tsx";
 import { LoginForm } from "@components/forms/LoginForm.tsx";
+import { AuthorInfo } from "@ui/AuthorInfo/AuthorInfo.tsx";
 
 export const LoginPage = () => {
   return (
@@ -10,17 +11,7 @@ export const LoginPage = () => {
         </h3>
         <LoginForm />
       </AuthenticationCard>
-      <p className="text-white font-bolder text-sm">
-        Created by{" "}
-        <a
-          href="https://github.com/xyashino"
-          className="appearance-none font-bold hover:underline"
-          target="_blank"
-          rel="noreferrer"
-        >
-          xyashino
-        </a>
-      </p>
+      <AuthorInfo />
     </>
   );
 };

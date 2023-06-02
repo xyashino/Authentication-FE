@@ -1,6 +1,5 @@
 import { ValidationInput } from "@ui/Input/ValidationInput.tsx";
-import { SocialButtonsGroup } from "@components/SocialButtonsGroup/SocialButtonsGroup.tsx";
-
+import { SocialButtonsGroup } from "@components/SocialButtons/SocialButtonsGroup.tsx";
 export const RegistrationForm = () => {
   return (
     <form>
@@ -26,9 +25,9 @@ export const RegistrationForm = () => {
         placeholder="*********"
       />
       <SocialButtonsGroup />
-      <p className="text-sm m-3 text-gray-700 pb-2 w-full text-center">
+      <p className="text-sm m-3 text-emerald-50 font-bold pb-1 w-full text-center">
         Already member?{" "}
-        <span className="font-bold ml-1 text-emerald-600 hover:underline cursor-pointer">
+        <span className="font-bold ml-1 text-emerald-900 hover:underline cursor-pointer uppercase">
           Login
         </span>
       </p>

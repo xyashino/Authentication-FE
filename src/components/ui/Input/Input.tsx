@@ -18,9 +18,7 @@ export const Input = ({
   );
 
   const inputClasses = twMerge(
-    `placeholder:font-bold placeholder:text-emerald-50/80  w-full bg-transparent transition-colors py-2 px-4 border-2 border-emerald-50/50 rounded-lg text-gray-700 focus:border-emerald-600 focus:shadow-2xl focus:shadow focus:outline-none text-md w-full form-Input ${
-      icon ? "pl-10" : ""
-    }}`,
+    "placeholder:font-bold placeholder:text-emerald-50/80  w-full bg-transparent transition-colors py-2 px-4 border-2 border-emerald-50/50 rounded-lg text-gray-700 focus:border-emerald-600 focus:shadow-2xl focus:shadow focus:outline-none text-md w-full",
     className
   );
 
@@ -35,7 +33,11 @@ export const Input = ({
         {!!label && <span className={labelClasses}>{label}</span>}
         {icon ? (
           <div className="relative">
-            <input type={type} className={inputClasses} {...rest} />
+            <input
+              type={type}
+              className={`${inputClasses} ${icon ? "pl-10" : ""}`}
+              {...rest}
+            />
             <Icon
               color="#64748b"
               icon={icon}
