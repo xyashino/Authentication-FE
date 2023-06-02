@@ -5,7 +5,7 @@ interface Props extends PropsWithChildren, HTMLAttributes<HTMLButtonElement> {}
 
 export const Button = ({ children, onClick, className, ...rest }: Props) => {
   const buttonClasses = twMerge(
-    "py-1 px-6 rounded-md text-center hover:scale-110 bg-emerald-700 transition-transform m-2 text-white font-bold",
+    "py-1 px-6 rounded-md text-center hover:scale-110 bg-emerald-700 transition-transform m-2 text-white font-bold shadow",
     className
   );
 
