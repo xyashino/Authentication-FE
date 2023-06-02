@@ -1,6 +1,35 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Wrapper } from "@layout/Wrapper/Wrapper.tsx";
+import { PageRoute } from "@enums/page-route.enum.ts";
+import { LoginPage } from "@pages/Login/LoginPage.tsx";
+import { RegistrationPage } from "@pages/Registration/RegistrationPage.tsx";
+import { PersonalInfoPage } from "@pages/PersonalInfo/PersonalInfoPage.tsx";
+import { EditAccountPage } from "@pages/EditAccount/EditAccountPage.tsx";
+
+const routes = createBrowserRouter([
+  {
+    path: PageRoute.HOME,
+    children: [
+      { path: PageRoute.PROFILE, element: <PersonalInfoPage /> },
+      { path: PageRoute.PROFILE_EDIT, element: <EditAccountPage /> },
+    ],
+  },
+  {
+    path: PageRoute.LOGIN,
+    element: <LoginPage />,
+  },
+  {
+    path: PageRoute.REGISTER,
+    element: <RegistrationPage />,
+  },
+  {
+    path: PageRoute.EVERYTHING,
+    element: <h1>404</h1>,
+  },
+]);
 
 export const App = () => (
-    <>
-        <h1 className="text-3xl font-bold underline text-center">Hello world!</h1>
-    </>
+  <Wrapper>
+    <RouterProvider router={routes} />
+  </Wrapper>
 );
