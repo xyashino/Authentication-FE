@@ -6,6 +6,7 @@ import { RegistrationPage } from "@pages/Registration/RegistrationPage.tsx";
 import { PersonalInfoPage } from "@pages/PersonalInfo/PersonalInfoPage.tsx";
 import { EditAccountPage } from "@pages/EditAccount/EditAccountPage.tsx";
 import { NotFoundPage } from "@pages/NotFoundPage.tsx";
+import { ErrorElement } from "@ui/ErrorElement/ErrorElement.tsx";
 
 const routes = createBrowserRouter([
   {
@@ -14,18 +15,22 @@ const routes = createBrowserRouter([
       { path: PageRoute.PROFILE, element: <PersonalInfoPage /> },
       { path: PageRoute.PROFILE_EDIT, element: <EditAccountPage /> },
     ],
+    errorElement: <ErrorElement />,
   },
   {
     path: PageRoute.LOGIN,
     element: <LoginPage />,
+    errorElement: <ErrorElement />,
   },
   {
     path: PageRoute.REGISTER,
     element: <RegistrationPage />,
+    errorElement: <ErrorElement />,
   },
   {
     path: PageRoute.EVERYTHING,
     element: <NotFoundPage />,
+    errorElement: <ErrorElement />,
   },
 ]);
 
