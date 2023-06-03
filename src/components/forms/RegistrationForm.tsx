@@ -25,9 +25,9 @@ export const RegistrationForm = () => {
         placeholder="*********"
       />
       <SocialButtonsGroup />
-      <p className="text-sm m-3 text-emerald-50 font-bold pb-1 w-full text-center">
+      <p className="m-3 w-full pb-1 text-center text-sm font-bold text-emerald-50">
         Already member?{" "}
-        <span className="font-bold ml-1 text-emerald-900 hover:underline cursor-pointer uppercase">
+        <span className="ml-1 cursor-pointer font-bold uppercase text-emerald-900 hover:underline">
           Login
         </span>
       </p>

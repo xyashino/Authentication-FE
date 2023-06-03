@@ -9,7 +9,7 @@ export const EditAccountForm = () => {
   };
 
   return (
-    <form className="w-full flex flex-col items-center" onSubmit={handleSubmit}>
+    <form className="flex w-full flex-col items-center" onSubmit={handleSubmit}>
       <Input placeholder="John Smith" label="Name" wrapperClassName="w-4/5" />
 
       <TextArea
@@ -39,7 +39,7 @@ export const EditAccountForm = () => {
         wrapperClassName="w-4/5"
       />
 
-      <Button className="px-8 py-2 text-xl w-1/3">Save</Button>
+      <Button className="w-1/3 px-8 py-2 text-xl">Save</Button>
     </form>
   );
 };

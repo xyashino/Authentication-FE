@@ -1,6 +1,6 @@
 export const AuthorInfo = () => {
   return (
-    <p className="text-white font-bolder text-sm">
+    <p className="text-sm text-white font-bolder">
       Created by{" "}
       <a
         href="https://github.com/xyashino"

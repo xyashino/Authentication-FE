@@ -2,8 +2,8 @@ import { SocialButton } from "@ui/SocialButton/SocialButton.tsx";
 
 export const SocialButtonsGroup = () => {
   return (
-    <div className="w-full flex flex-col items-center">
-      <p className="text-sm m-3 font-ligth  pb-2 border-b-2 w-4/5 text-center text-emerald-50/70 border-emerald-50/30 font-bold">
+    <div className="flex w-full flex-col items-center">
+      <p className="m-3 w-4/5 border-b-2 border-emerald-50/30 pb-2 text-center text-sm font-bold text-emerald-50/70 font-ligth">
         or continue with these social profile
       </p>
       <div>

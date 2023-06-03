@@ -6,7 +6,7 @@ export const RegistrationPage = () => {
   return (
     <>
       <AuthenticationCard>
-        <h3 className="text-lg text-gray-700 font-bold capitalize text-center">
+        <h3 className="text-center text-lg font-bold capitalize text-gray-700">
           Create Account
         </h3>
         <RegistrationForm />

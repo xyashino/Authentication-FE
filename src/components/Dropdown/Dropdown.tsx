@@ -18,14 +18,14 @@ export const Dropdown = () => {
   return (
     <div className="relative mr-8">
       <button
-        className="mr-8 h-full flex items-center hover:bg-neutral-50/60 p-2 justify-around cursor-pointer w-full rounded-xl"
+        className="mr-8 flex h-full w-full cursor-pointer items-center justify-around rounded-xl p-2 hover:bg-neutral-50/60"
         onClick={() => setIsDropdownOpen(true)}
       >
         <Avatar />
         <h2>test</h2>
         <Icon
           icon="material-symbols:add-home-work-outline-rounded"
-          className="w-8 h-8 text-emerald-900"
+          className="h-8 w-8 text-emerald-900"
         />
       </button>
       <div

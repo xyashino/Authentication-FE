@@ -6,7 +6,7 @@ export const LoginPage = () => {
   return (
     <>
       <AuthenticationCard>
-        <h3 className="text-lg w-5/6 text-gray-700 font-bold capitalize text-center">
+        <h3 className="w-5/6 text-center text-lg font-bold capitalize text-gray-700">
           welcome again !
         </h3>
         <LoginForm />

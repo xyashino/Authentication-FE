@@ -44,7 +44,7 @@ export const TextArea = ({
   return (
     <label className={labelClasses}>
       {!!description && (
-        <span className="w-full text-gray-600 pl-2 text-md uppercase font-bold cursor-pointer">
+        <span className="w-full cursor-pointer pl-2 font-bold uppercase text-gray-600 text-md">
           {description}
         </span>
       )}

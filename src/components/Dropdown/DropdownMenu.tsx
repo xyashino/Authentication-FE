@@ -6,7 +6,7 @@ export const DropdownMenu = () => {
   const listStyles =
     "text-lg border-b-2 p-1 hover:bg-emerald-800 hover:text-sky-50 font-bold uppercase text-gray-600 cursor-pointer transition-colors rounded px-2";
   return (
-    <nav className="w-full text-sm flex flex-col shadow-xl">
+    <nav className="flex w-full flex-col text-sm shadow-xl">
       <NavLink to={PageRoute.PROFILE} role="menuitem" className={listStyles}>
         ACCOUNT
       </NavLink>

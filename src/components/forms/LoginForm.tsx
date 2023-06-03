@@ -4,7 +4,7 @@ import { SocialButtonsGroup } from "@components/SocialButtons/SocialButtonsGroup
 
 export const LoginForm = () => {
   return (
-    <form className="flex flex-col justify-center items-center">
+    <form className="flex flex-col items-center justify-center">
       <ValidationInput
         icon="mdi:email"
         label="Email:"
@@ -22,9 +22,9 @@ export const LoginForm = () => {
       <Button className="w-4/5">LOGIN</Button>
       <SocialButtonsGroup />
 
-      <p className="text-sm m-3 text-emerald-50/90 font-bold pb-2 w-full text-center">
+      <p className="m-3 w-full pb-2 text-center text-sm font-bold text-emerald-50/90">
         Don't have account yet?{" "}
-        <span className="font-bold ml-1 text-emerald-800 hover:underline cursor-pointer transition-all uppercase">
+        <span className="ml-1 cursor-pointer font-bold uppercase text-emerald-800 transition-all hover:underline">
           Register
         </span>
       </p>

@@ -10,21 +10,21 @@ export const PersonalInfoPage = () => {
     <>
       <Header />
       <MainWrapper>
-        <h1 className="text-4xl m-2 font-bold text-emerald-100">
+        <h1 className="m-2 text-4xl font-bold text-emerald-100">
           Personal Info
         </h1>
         <p className="text-xl text-emerald-100">
           basic info , like your name and photo.
         </p>
         <Card>
-          <div className="mb-2 border-b-2 border-emerald-900/10 grow flex justify-between items-center">
+          <div className="mb-2 flex grow items-center justify-between border-b-2 border-emerald-900/10">
             <div>
               <h2 className="text-3xl font-black text-emerald-50">Profile</h2>
-              <p className="text-lg  text-emerald-50 mb-4">
+              <p className="mb-4 text-lg text-emerald-50">
                 Some info may be visible to other people
               </p>
             </div>
-            <Button className="py-3 px-10 uppercase">Edytuj</Button>
+            <Button className="px-10 py-3 uppercase">Edytuj</Button>
           </div>
 
           <PersonalInfoSection

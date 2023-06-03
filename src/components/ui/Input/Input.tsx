@@ -41,7 +41,7 @@ export const Input = ({
             <Icon
               color="#64748b"
               icon={icon}
-              className="absolute left-0 top-0 h-full py-1.5 px-1 w-10 cursor-pointer hover:scale-110 transition-transform"
+              className="absolute top-0 left-0 h-full w-10 cursor-pointer px-1 transition-transform py-1.5 hover:scale-110"
             />
           </div>
         ) : (

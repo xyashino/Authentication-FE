@@ -10,12 +10,12 @@ export const EditAccountPage = () => {
       <Header />
       <MainWrapper>
         <div className="w-1/2">
-          <button className="p-2 hover:font-bold self-start tranistion-all">
+          <button className="self-start p-2 tranistion-all hover:font-bold">
             {"< Back"}
           </button>
         </div>
         <Card className="flex flex-col items-center">
-          <div className="self-start p-2 mb-2 border-b-2 w-full border-emerald-50/50">
+          <div className="mb-2 w-full self-start border-b-2 border-emerald-50/50 p-2">
             <h2 className="text-3xl font-bold text-emerald-50">Change Info</h2>
             <p className="text-xl text-emerald-50">
               Changes will be reflected te every services

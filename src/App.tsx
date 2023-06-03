@@ -5,6 +5,7 @@ import { LoginPage } from "@pages/Login/LoginPage.tsx";
 import { RegistrationPage } from "@pages/Registration/RegistrationPage.tsx";
 import { PersonalInfoPage } from "@pages/PersonalInfo/PersonalInfoPage.tsx";
 import { EditAccountPage } from "@pages/EditAccount/EditAccountPage.tsx";
+import { NotFoundPage } from "@pages/NotFoundPage.tsx";
 
 const routes = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const routes = createBrowserRouter([
   },
   {
     path: PageRoute.EVERYTHING,
-    element: <h1>404</h1>,
+    element: <NotFoundPage />,
   },
 ]);
 
