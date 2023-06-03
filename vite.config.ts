@@ -15,6 +15,8 @@ export default defineConfig({
       "@forms": resolve(__dirname, "./src/components/forms"),
       "@components": resolve(__dirname, "./src/components"),
       "@enums": resolve(__dirname, "./src/enums"),
+      "@hooks": resolve(__dirname, "./src/hooks"),
+      "@utils": resolve(__dirname, "./src/utils"),
     },
   },
 });

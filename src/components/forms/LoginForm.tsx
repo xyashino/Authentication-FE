@@ -1,7 +1,6 @@
 import { ValidationInput } from "@ui/Input/ValidationInput.tsx";
 import { Button } from "@ui/Button/Button.tsx";
 import { SocialButtonsGroup } from "@components/SocialButtons/SocialButtonsGroup.tsx";
-
 export const LoginForm = () => {
   return (
     <form className="flex flex-col items-center justify-center">

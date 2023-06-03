@@ -7,6 +7,7 @@ import { PersonalInfoPage } from "@pages/PersonalInfo/PersonalInfoPage.tsx";
 import { EditAccountPage } from "@pages/EditAccount/EditAccountPage.tsx";
 import { NotFoundPage } from "@pages/NotFoundPage.tsx";
 import { ErrorElement } from "@ui/ErrorElement/ErrorElement.tsx";
+import { checkAuth } from "@utils/network/check-auth.ts";
 
 const routes = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const routes = createBrowserRouter([
       { path: PageRoute.PROFILE_EDIT, element: <EditAccountPage /> },
     ],
     errorElement: <ErrorElement />,
+    loader: () => checkAuth(),
   },
   {
     path: PageRoute.LOGIN,
