@@ -13,13 +13,13 @@ export const useValidationForm = (inputData: IFormData[]) => {
 
   useLayoutEffect(() => {
     let isValid = true;
-    for (const { isValid: isFieldValid } of Object.values(formState)) {
+    for (const { isValid: isFieldValid } of formState) {
       if (!isFieldValid) {
         isValid = false;
         break;
       }
     }
-    setIsFormValid(!isValid);
+    setIsFormValid(isValid);
   }, [formState]);
 
   const updateValue = (newValue: string, uniqueName: string) => {
@@ -35,7 +35,7 @@ export const useValidationForm = (inputData: IFormData[]) => {
         foundInput.prefix,
         foundInput.validationData
       );
-      foundInput.isValid = true;
+      foundInput.isValid = !foundInput.isEmpty;
       foundInput.error = null;
     } catch (error) {
       const message = error instanceof Error ? error.message : "Unknown error";

@@ -86,7 +86,7 @@ export const RegistrationForm = () => {
           {...attributes}
         />
       ))}
-      <Button className="w-4/5" disabled={isFormValid}>
+      <Button className="w-4/5" disabled={!isFormValid}>
         Create
       </Button>
       <SocialButtonsGroup />

@@ -55,7 +55,7 @@ export const LoginForm = () => {
         />
       ))}
 
-      <Button className="w-4/5" disabled={isFormValid}>
+      <Button className="w-4/5" disabled={!isFormValid}>
         LOGIN
       </Button>
       <SocialButtonsGroup />
