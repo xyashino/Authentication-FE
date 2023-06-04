@@ -23,7 +23,8 @@
       "@*": ["src/*"],
       "@ui/*": ["src/components/ui/*"],
       "@layout/*": ["src/components/layout/*"],
-    },
+      "@backendTypes": ["../authentication-be/src/types/"]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
