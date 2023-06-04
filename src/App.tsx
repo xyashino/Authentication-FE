@@ -8,12 +8,14 @@ import { EditAccountPage } from "@pages/EditAccount/EditAccountPage.tsx";
 import { NotFoundPage } from "@pages/NotFoundPage.tsx";
 import { ErrorElement } from "@ui/ErrorElement/ErrorElement.tsx";
 import { checkAuth } from "@utils/network/check-auth.ts";
+import { AuthProvider } from "@components/AuthProvider/AuthProvider.tsx";
 
 const routes = createBrowserRouter([
   {
     path: PageRoute.HOME,
+    element: <AuthProvider />,
     children: [
-      { index: true, element: <PersonalInfoPage /> },
+      { path: PageRoute.PROFILE, element: <PersonalInfoPage /> },
       { path: PageRoute.PROFILE_EDIT, element: <EditAccountPage /> },
     ],
     errorElement: <ErrorElement />,
