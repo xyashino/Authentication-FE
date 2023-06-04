@@ -2,8 +2,14 @@ import { Avatar } from "@ui/Avatar/Avatar.tsx";
 import { Icon } from "@iconify/react";
 import { useLayoutEffect, useRef, useState } from "react";
 import { DropdownMenu } from "./DropdownMenu.tsx";
+import { useRouteLoaderData } from "react-router-dom";
+import { PageRoute } from "@enums/page-route.enum.ts";
+import { UserResponse } from "@backendTypes";
 
 export const Dropdown = () => {
+  const { avatar, fullName } = useRouteLoaderData(
+    PageRoute.HOME
+  ) as UserResponse;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -21,8 +27,8 @@ export const Dropdown = () => {
         className="mr-8 flex h-full w-full cursor-pointer items-center justify-around rounded-xl p-2 hover:bg-neutral-50/60"
         onClick={() => setIsDropdownOpen(true)}
       >
-        <Avatar />
-        <h2>test</h2>
+        <Avatar src={avatar ?? undefined} />
+        <h2>{fullName ?? "Unkwon"}</h2>
         <Icon
           icon="material-symbols:add-home-work-outline-rounded"
           className="h-8 w-8 text-emerald-900"
@@ -31,7 +37,7 @@ export const Dropdown = () => {
       <div
         className={`absolute top-full left-0 mt-4 bg-sky-50 w-full rounded transition-all duration-300 ${dropdownToggleClasses}`}
         ref={menuRef}
-        // onBlur={() => setIsDropdownOpen(false)}
+        onBlur={() => setIsDropdownOpen(false)}
         tabIndex={0}
       >
         <DropdownMenu />

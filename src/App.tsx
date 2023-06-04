@@ -14,12 +14,13 @@ const routes = createBrowserRouter([
   {
     path: PageRoute.HOME,
     element: <AuthProvider />,
+    id: PageRoute.HOME,
     children: [
       { path: PageRoute.PROFILE, element: <PersonalInfoPage /> },
       { path: PageRoute.PROFILE_EDIT, element: <EditAccountPage /> },
     ],
     errorElement: <ErrorElement />,
-    loader: () => checkAuth(),
+    loader: checkAuth,
   },
   {
     path: PageRoute.LOGIN,

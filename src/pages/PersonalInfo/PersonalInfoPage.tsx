@@ -1,12 +1,12 @@
 import { PersonalInfoSection } from "@ui/PersonalInfoSection/PersonalSection.tsx";
 import { Avatar } from "@ui/Avatar/Avatar.tsx";
 import { Card } from "@layout/Card.tsx";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useRouteLoaderData } from "react-router-dom";
 import { PageRoute } from "@enums/page-route.enum.ts";
+import { UserResponse } from "@backendTypes";
 
 export const PersonalInfoPage = () => {
-  const data = useLoaderData();
-  console.log(data);
+  const user = useRouteLoaderData(PageRoute.HOME) as UserResponse;
   return (
     <>
       <h1 className="m-2 text-4xl font-bold text-emerald-100">Personal Info</h1>
@@ -31,12 +31,17 @@ export const PersonalInfoPage = () => {
 
         <PersonalInfoSection
           title="Photo"
-          secondElement={<Avatar className="w-16" />}
+          secondElement={
+            <Avatar className="w-16" src={user.avatar ?? undefined} />
+          }
         />
-        <PersonalInfoSection title="Name" secondElement="Testowe Imie" />
+        <PersonalInfoSection title="Name" secondElement={user.fullName} />
         <PersonalInfoSection title="Bio" secondElement="Testowe bio" />
-        <PersonalInfoSection title="Phone" secondElement="123-123-123" />
-        <PersonalInfoSection title="Email" secondElement="test@waa.ts" />
+        <PersonalInfoSection
+          title="Phone"
+          secondElement={user.phone ?? "NONE"}
+        />
+        <PersonalInfoSection title="Email" secondElement={user.email} />
         <PersonalInfoSection title="Passwrod" secondElement="**********" />
       </Card>
     </>
