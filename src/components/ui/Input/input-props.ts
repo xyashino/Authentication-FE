@@ -10,4 +10,6 @@ export interface InputProps
   wrapperClassName?: string;
   labelClassName?: string;
   icon?: string;
+  name?: string;
+  value?: string;
 }
