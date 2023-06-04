@@ -13,7 +13,7 @@ const routes = createBrowserRouter([
   {
     path: PageRoute.HOME,
     children: [
-      { path: PageRoute.PROFILE, element: <PersonalInfoPage /> },
+      { index: true, element: <PersonalInfoPage /> },
       { path: PageRoute.PROFILE_EDIT, element: <EditAccountPage /> },
     ],
     errorElement: <ErrorElement />,
