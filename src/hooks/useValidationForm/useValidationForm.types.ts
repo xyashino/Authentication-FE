@@ -1,5 +1,5 @@
 export interface IValidationOptions {
-  minLength: number;
+  minLength?: number;
   maxLength?: number;
   specialChars?: string[];
   includeSpace?: boolean;
@@ -8,6 +8,7 @@ export interface IValidationOptions {
     regexp: RegExp;
     errorMessage: string;
   };
+  canBeEmpty?: true;
 }
 
 export interface IFormInput {

@@ -1,4 +1,4 @@
-import { ChangeEvent, useLayoutEffect, useState } from "react";
+import { SyntheticEvent, useLayoutEffect, useState } from "react";
 import { IFormData } from "./useValidationForm.types.ts";
 import {
   generateInitialFormState,
@@ -45,9 +45,9 @@ export const useValidationForm = (inputData: IFormData[]) => {
     setFormState(copyArray);
   };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: SyntheticEvent) => {
     e.preventDefault();
-    const { name, value } = e.target;
+    const { name, value } = e.target as HTMLInputElement;
     updateValue(value, name);
   };
 
