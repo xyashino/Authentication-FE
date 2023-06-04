@@ -3,14 +3,24 @@ import { MainWrapper } from "@layout/MainWrapper.tsx";
 import { Card } from "@layout/Card.tsx";
 import { EditAccountForm } from "@components/forms/EditAccountForm.tsx";
 import { Avatar } from "@ui/Avatar/Avatar.tsx";
+import { SyntheticEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const EditAccountPage = () => {
+  const navigate = useNavigate();
+  const handleClik = (e: SyntheticEvent) => {
+    e.preventDefault();
+    navigate(-1);
+  };
   return (
     <>
       <Header />
       <MainWrapper>
         <div className="w-1/2">
-          <button className="self-start p-2 tranistion-all hover:font-bold">
+          <button
+            className="self-start p-2 tranistion-all hover:font-bold"
+            onClick={handleClik}
+          >
             {"< Back"}
           </button>
         </div>

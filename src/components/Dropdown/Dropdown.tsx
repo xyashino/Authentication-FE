@@ -31,7 +31,7 @@ export const Dropdown = () => {
       <div
         className={`absolute top-full left-0 mt-4 bg-sky-50 w-full rounded transition-all duration-300 ${dropdownToggleClasses}`}
         ref={menuRef}
-        onBlur={() => setIsDropdownOpen(false)}
+        // onBlur={() => setIsDropdownOpen(false)}
         tabIndex={0}
       >
         <DropdownMenu />

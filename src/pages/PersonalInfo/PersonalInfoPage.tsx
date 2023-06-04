@@ -1,11 +1,14 @@
 import { Header } from "@ui/Header/Header.tsx";
 import { MainWrapper } from "@layout/MainWrapper.tsx";
-import { Button } from "@ui/Button/Button.tsx";
 import { PersonalInfoSection } from "@ui/PersonalInfoSection/PersonalSection.tsx";
 import { Avatar } from "@ui/Avatar/Avatar.tsx";
 import { Card } from "@layout/Card.tsx";
+import { Link, useLoaderData } from "react-router-dom";
+import { PageRoute } from "@enums/page-route.enum.ts";
 
 export const PersonalInfoPage = () => {
+  const data = useLoaderData();
+  console.log(data);
   return (
     <>
       <Header />
@@ -24,7 +27,12 @@ export const PersonalInfoPage = () => {
                 Some info may be visible to other people
               </p>
             </div>
-            <Button className="px-10 py-3 uppercase">Edytuj</Button>
+            <Link
+              className="px-10 py-3 uppercase bg-emerald-700 font-bold rounded shadow text-emerald-50 hover:scale-110 transition-transform"
+              to={PageRoute.PROFILE_EDIT}
+            >
+              Edytuj
+            </Link>
           </div>
 
           <PersonalInfoSection
