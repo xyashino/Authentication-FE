@@ -1,6 +1,8 @@
 import { AuthenticationCard } from "@components/layout/AuthenticationCard/AuthenticationCard.tsx";
 import { RegistrationForm } from "@components/forms/RegistrationForm.tsx";
 import { AuthorInfo } from "@ui/AuthorInfo/AuthorInfo.tsx";
+import { AuthenticationPrompt } from "@ui/AuthenticationPrompt/AuthenticationPrompt.tsx";
+import { PageRoute } from "@enums/page-route.enum.ts";
 
 export const RegistrationPage = () => {
   return (
@@ -10,6 +12,11 @@ export const RegistrationPage = () => {
           Create Account
         </h3>
         <RegistrationForm />
+        <AuthenticationPrompt
+          question="Already member?"
+          linkText="Login"
+          linkTo={PageRoute.LOGIN}
+        />
       </AuthenticationCard>
       <AuthorInfo />
     </>
