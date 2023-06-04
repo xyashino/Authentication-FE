@@ -16,7 +16,11 @@ export interface IFormInput {
   isValid: boolean;
   error: null | string;
   validationData: IValidationOptions;
+  uniqueName: string;
   prefix: string;
+  attributes?: {
+    [key: string]: any;
+  };
 }
 
 export interface IFormData {
@@ -24,4 +28,7 @@ export interface IFormData {
   validationData: IValidationOptions;
   defaultValue?: string;
   uniqueName: string;
+  attributes?: {
+    [key: string]: any;
+  };
 }

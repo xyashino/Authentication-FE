@@ -3,48 +3,19 @@ import {
   IFormInput,
   IValidationOptions,
 } from "./useValidationForm.types.ts";
-
 export const generateInitialFormState = (
   inputData: IFormData[]
-): { [key: string]: IFormInput } => {
-  const initialState: { [key: string]: IFormInput } = {};
-  inputData.forEach((item) => {
-    initialState[item.uniqueName] = {
-      value: item.defaultValue ?? "",
-      isEmpty: item.defaultValue === "",
-      isValid: true,
-      error: null,
-      validationData: item.validationData,
-      prefix: item.errorPrefix,
-    };
-  });
-  return initialState;
-};
-
-// export const updateLinkItem = (
-//   value: IFormInput,
-//   formData: { [key: string]: IFormInput }
-// ) => {
-//   const { linkWith } = obj.validationData;
-//   if (!linkWith) return;
-//   const { uniqueName, isConfirm } = linkWith;
-//   const linkObj = { ...formData[uniqueName] };
-//   if (!linkObj) return;
-//   const { value: linkValue } = linkObj;
-//   const isLinkSame = linkValue === obj.value;
-//   if (isLinkSame) return;
-//
-//   const error = `${obj.prefix} must be the same as ${linkObj.prefix}`;
-//
-//   if (isConfirm) {
-//     obj.isValid = false;
-//     obj.error = error;
-//     return undefined;
-//   }
-//   linkObj.isValid = false;
-//   linkObj.error = error;
-//   return { [uniqueName]: linkObj };
-// };
+): IFormInput[] =>
+  inputData.map((item) => ({
+    uniqueName: item.uniqueName,
+    value: item.defaultValue ?? "",
+    isEmpty: item.defaultValue === "",
+    isValid: true,
+    error: null,
+    validationData: item.validationData,
+    prefix: item.errorPrefix,
+    attributes: item.attributes,
+  }));
 
 export const validateInputValue = (
   inputValue: string,

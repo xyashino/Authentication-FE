@@ -1,5 +1,5 @@
-import { useLayoutEffect, useState } from "react";
-import { IFormData, IFormInput } from "./useValidationForm.types.ts";
+import { ChangeEvent, useLayoutEffect, useState } from "react";
+import { IFormData } from "./useValidationForm.types.ts";
 import {
   generateInitialFormState,
   validateInputValue,
@@ -23,28 +23,37 @@ export const useValidationForm = (inputData: IFormData[]) => {
   }, [formState]);
 
   const updateValue = (newValue: string, uniqueName: string) => {
-    if (!formState[uniqueName]) return;
-    const copyObj: IFormInput = { ...formState[uniqueName] };
+    const copyArray = [...formState];
+    const foundInput = copyArray.find((item) => item.uniqueName === uniqueName);
+    if (!foundInput) return;
+
     try {
-      copyObj.value = newValue;
-      copyObj.isEmpty = newValue.length === 0;
-      validateInputValue(newValue, copyObj.prefix, copyObj.validationData);
-      copyObj.isValid = true;
-      copyObj.error = null;
+      foundInput.value = newValue;
+      foundInput.isEmpty = newValue.length === 0;
+      validateInputValue(
+        newValue,
+        foundInput.prefix,
+        foundInput.validationData
+      );
+      foundInput.isValid = true;
+      foundInput.error = null;
     } catch (error) {
       const message = error instanceof Error ? error.message : "Unknown error";
-      copyObj.isValid = false;
-      copyObj.error = message;
+      foundInput.isValid = false;
+      foundInput.error = message;
     }
-    setFormState((prevState) => ({
-      ...prevState,
-      [uniqueName]: copyObj,
-    }));
+    setFormState(copyArray);
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    updateValue(value, name);
   };
 
   return {
     formState,
-    updateValue,
     isFormValid,
+    onChange: handleChange,
   };
 };
