@@ -36,7 +36,7 @@ export const PersonalInfoPage = () => {
           }
         />
         <PersonalInfoSection title="Name" secondElement={user.fullName} />
-        <PersonalInfoSection title="Bio" secondElement="Testowe bio" />
+        <PersonalInfoSection title="Bio" secondElement={user.bio ?? "NONE"} />
         <PersonalInfoSection
           title="Phone"
           secondElement={user.phone ?? "NONE"}
