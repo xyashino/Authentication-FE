@@ -31,13 +31,13 @@ export const Dropdown = () => {
   }, []);
 
   return (
-    <div className="relative mr-8">
+    <div className="relative lg:mr-8">
       <button
         className="mr-8 flex h-full w-full cursor-pointer items-center justify-around rounded-xl p-2 hover:bg-neutral-50/60"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
         <Avatar src={avatar ?? undefined} />
-        <h2>{fullName ?? "Unknown"}</h2>
+        <h2 className="hidden sm:block">{fullName ?? "Unknown"}</h2>
         <Icon
           icon="material-symbols:add-home-work-outline-rounded"
           className="h-8 w-8 text-emerald-900"

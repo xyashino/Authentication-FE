@@ -35,18 +35,18 @@ export const ChangeAvatar = () => {
   };
 
   return (
-    <div className="p-5 flex  flex-wrap justify-around items-center">
-      <h1 className="text-3xl italic font-bold uppercase mb-8 border-b-2 text-slate-800 text-left w-full">
+    <div className="p-2 lg:p-6 flex  flex-wrap justify-around items-center">
+      <h1 className="text-3xl italic font-bold uppercase lg:mb-8 mb-2 border-b-2 text-slate-800 text-left w-full">
         Change Avatar:
       </h1>
 
-      <h2 className="w-full p-2 text-center text-xl uppercase font-bold italic">
+      <h2 className="w-full lg:p-4 p-2 text-center text-xl uppercase font-bold italic">
         You can provide <span className="text-emerald-700">URL</span> or
         <span className="text-emerald-700"> Add Image</span>
       </h2>
-      <div className="min-w-1/4 px-16 select-none">
+      <div className="min-w-1/4 px-16 select-none my-4">
         <Avatar
-          className="w-52"
+          className="w-32 lg:w-48"
           src={image instanceof File ? URL.createObjectURL(image) : image}
         />
       </div>
@@ -56,7 +56,7 @@ export const ChangeAvatar = () => {
         name="avatar"
         id="avatar"
         icon="arcticons:urlsanitizer"
-        className="border-2 border-emerald-600 w-full"
+        className="border-2 border-emerald-600 w-full px-0 mx-0"
         wrapperClassName="grow"
         onChange={handleChange}
         value={(image instanceof File ? image.name : image) ?? ""}

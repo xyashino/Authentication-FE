@@ -25,18 +25,18 @@ export const Logout = ({ closeModal }: Props) => {
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl uppercase font-bold italic text-emerald-700 mb-4 border-b-2">
+    <div className="lg:p-4 p-2">
+      <h1 className="lg:text-2xl text-lg uppercase font-bold italic text-emerald-700 mb-4 border-b-2">
         Are you sure you want to logout? <br />
       </h1>
       <div className="flex justify-end grow">
         <Button
-          className="text-md uppercase px-12 border-b-2 mx-4 text-black bg-transparent shadow-none hover:shadow-2xl  shadow-emerald-700"
+          className="text-md uppercase lg:px-12 border-b-2 mx-4 text-black bg-transparent shadow-none hover:shadow-2xl  shadow-emerald-700"
           onClick={closeModal}
         >
           Cancel
         </Button>
-        <Button className="text-md uppercase px-12" onClick={handleLogout}>
+        <Button className="text-md uppercase lg:px-12" onClick={handleLogout}>
           Logout
         </Button>
       </div>

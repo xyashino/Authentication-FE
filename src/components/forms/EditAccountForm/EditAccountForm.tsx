@@ -107,7 +107,7 @@ export const EditAccountForm = () => {
           error,
           ...attributes,
           onChange,
-          wrapperClassName: "w-4/5",
+          wrapperClassName: "w-full lg:w-4/5",
         };
         return uniqueName === InputName.BIO ? (
           <TextArea {...m} />

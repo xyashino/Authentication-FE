@@ -31,7 +31,7 @@ export const UploadImage = ({ setImage }: Props) => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center w-full h-52 border-2 p-2 m-4 rounded-xl  border-emerald-700  bg-emerald-500/60 relative"
+      className="flex flex-col items-center justify-center w-full  py-4 border-2 lg:my-4 rounded-xl  border-emerald-700  bg-emerald-500/60 relative"
       onDragEnter={(e) => clearPreventDefault(e, true)}
       onDragLeave={(e) => clearPreventDefault(e, false)}
       onDragEnd={(e) => clearPreventDefault(e, false)}
@@ -54,7 +54,7 @@ export const UploadImage = ({ setImage }: Props) => {
         onChange={handleFileInput}
         type="file"
         accept="image/*"
-        className="file:rounded-xl file:border-0 file:p-2 file:bg-emerald-50/80 file:font-bold cursor-pointer hover:scale-110 transition-transform ml-10"
+        className="file:rounded-xl file:border-0 file:p-2 file:bg-emerald-50/80 file:font-bold cursor-pointer hover:scale-110 transition-transform "
       />
     </div>
   );

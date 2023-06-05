@@ -51,7 +51,11 @@ export const EditAccountPage = () => {
         </button>
         <EditAccountForm />
       </Card>
-      <Modal open={isOpen} onClose={closeModal} boxClassName="w-1/2">
+      <Modal
+        open={isOpen}
+        onClose={closeModal}
+        boxClassName="w-11/12 lg:w-1/2 xl:w-1/3"
+      >
         <ChangeAvatar />
       </Modal>
     </>
