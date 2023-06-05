@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AxiosRequestConfig, AxiosResponse, isAxiosError } from "axios";
 import { AxiosSetup } from "@utils/network/axios-setup.ts";
+import { toast } from "react-hot-toast";
 interface AxiosProps {
   url: string;
   method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
@@ -55,13 +56,14 @@ export const useAxios = ({
       setLoading(false);
       return res.data;
     } catch (error) {
-      let message = "Unknown error";
+      let message = "Nieznany błąd";
       if (isAxiosError(error)) {
         message =
           error.response?.data.message ??
           error.response?.data.error ??
           error.message;
       }
+      toast.error(Array.isArray(message) ? message.join("\n") : message);
       setError({ show: true, msg: message, type: "error" });
       setLoading(false);
       afterErrorMethod && afterErrorMethod();
