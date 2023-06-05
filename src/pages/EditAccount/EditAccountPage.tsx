@@ -1,6 +1,6 @@
 import { SyntheticEvent } from "react";
 import { Card } from "@layout/Card.tsx";
-import { EditAccountForm } from "@components/forms/EditAccountForm.tsx";
+import { EditAccountForm } from "@components/forms/EditAccountForm/EditAccountForm.tsx";
 import { Avatar } from "@ui/Avatar/Avatar.tsx";
 import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import { PageRoute } from "@enums/page-route.enum.ts";
@@ -8,7 +8,7 @@ import { UserResponse } from "@backendTypes";
 import { Icon } from "@iconify/react";
 import { Modal } from "@ui/Modal/Modal.tsx";
 import { useModal } from "@hooks/useModal.tsx";
-import { ChangeAvatar } from "@components/Modals/ChangeAvatar.tsx";
+import { ChangeAvatar } from "@components/Modals/ChangeAvatar/ChangeAvatar.tsx";
 
 export const EditAccountPage = () => {
   const { avatar } = useRouteLoaderData(PageRoute.HOME) as UserResponse;
