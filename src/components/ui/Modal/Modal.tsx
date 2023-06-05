@@ -56,17 +56,17 @@ export const Modal = ({
     <div
       ref={ref}
       onClick={handleOverlayClick}
-      className="fixed z-10 inset-0 overflow-y-hidden bg-emerald-800/50 grid place-items-center"
+      className="fixed inset-0 z-10 grid place-items-center overflow-y-hidden bg-emerald-800/50"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
     >
       <div className={boxClasses}>
         <button
-          className="hover:scale-110 hover:rotate-12 transition-transform top-0 right-0 p-2 absolute"
+          className="absolute top-0 right-0 p-2 transition-transform hover:rotate-12 hover:scale-110"
           onClick={onClose}
         >
-          <Icon icon="mdi:close" className="text-emerald-600 text text-3xl" />
+          <Icon icon="mdi:close" className="text-3xl text-emerald-600 text" />
         </button>
         <div>{children}</div>
       </div>

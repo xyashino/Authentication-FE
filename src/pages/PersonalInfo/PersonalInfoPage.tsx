@@ -22,7 +22,7 @@ export const PersonalInfoPage = () => {
             </p>
           </div>
           <Link
-            className="px-10 py-3 uppercase bg-emerald-700 font-bold rounded shadow text-emerald-50 hover:scale-110 transition-transform"
+            className="rounded bg-emerald-700 px-10 py-3 font-bold uppercase text-emerald-50 shadow transition-transform hover:scale-110"
             to={PageRoute.PROFILE_EDIT}
           >
             Edytuj

@@ -3,7 +3,7 @@ import { SocialButton } from "@ui/SocialButton/SocialButton.tsx";
 export const SocialButtonsGroup = () => {
   return (
     <div className="flex w-full flex-col items-center">
-      <p className="m-3 w-4/5 border-b-2 border-emerald-50/30 pb-2 text-center text-sm font-bold text-emerald-50/70 font-ligth select-none">
+      <p className="m-3 w-4/5 select-none border-b-2 border-emerald-50/30 pb-2 text-center text-sm font-bold text-emerald-50/70 font-ligth">
         or continue with these social profile
       </p>
       <div>

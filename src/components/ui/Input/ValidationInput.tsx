@@ -16,7 +16,7 @@ export const ValidationInput = ({ className = "", error, ...rest }: Props) => {
     <>
       <Input {...rest} className={baseClasses}>
         {!!error && (
-          <p className="relative w-full text-center text-sm  uppercase text-red-500 font-mono font-semibold animate-show-text">
+          <p className="relative w-full text-center font-mono text-sm font-semibold uppercase text-red-500 animate-show-text">
             {error}
           </p>
         )}

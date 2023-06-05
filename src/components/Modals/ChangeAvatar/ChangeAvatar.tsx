@@ -35,16 +35,16 @@ export const ChangeAvatar = () => {
   };
 
   return (
-    <div className="p-2 lg:p-6 flex  flex-wrap justify-around items-center">
-      <h1 className="text-3xl italic font-bold uppercase lg:mb-8 mb-2 border-b-2 text-slate-800 text-left w-full">
+    <div className="flex flex-wrap items-center justify-around p-2 lg:p-6">
+      <h1 className="mb-2 w-full border-b-2 text-left text-3xl font-bold uppercase italic text-slate-800 lg:mb-8">
         Change Avatar:
       </h1>
 
-      <h2 className="w-full lg:p-4 p-2 text-center text-xl uppercase font-bold italic">
+      <h2 className="w-full p-2 text-center text-xl font-bold uppercase italic lg:p-4">
         You can provide <span className="text-emerald-700">URL</span> or
         <span className="text-emerald-700"> Add Image</span>
       </h2>
-      <div className="min-w-1/4 px-16 select-none my-4">
+      <div className="my-4 select-none px-16 min-w-1/4">
         <Avatar
           className="w-32 lg:w-48"
           src={image instanceof File ? URL.createObjectURL(image) : image}
@@ -56,13 +56,13 @@ export const ChangeAvatar = () => {
         name="avatar"
         id="avatar"
         icon="arcticons:urlsanitizer"
-        className="border-2 border-emerald-600 w-full px-0 mx-0"
+        className="mx-0 w-full border-2 border-emerald-600 px-0"
         wrapperClassName="grow"
         onChange={handleChange}
         value={(image instanceof File ? image.name : image) ?? ""}
       />
       <UploadImage setImage={setImage} />
-      <Button className="text-2xl uppercase px-12 py-2" onClick={handleSave}>
+      <Button className="px-12 py-2 text-2xl uppercase" onClick={handleSave}>
         Save
       </Button>
     </div>
