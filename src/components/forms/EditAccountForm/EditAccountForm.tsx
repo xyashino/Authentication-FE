@@ -7,6 +7,8 @@ import { UserResponse } from "@backendTypes";
 import { useValidationForm } from "@hooks/useValidationForm";
 import { ValidationInput } from "@ui/Input/ValidationInput.tsx";
 import { PHONE_NUMBER_REGEXP } from "@constants/regexp.constant.ts";
+import { updateUserDetails } from "@components/forms/EditAccountForm/EditAccountForm.helper.ts";
+import { toast } from "react-hot-toast";
 
 enum InputName {
   FULL_NAME = "fullName",
@@ -15,11 +17,11 @@ enum InputName {
   PASSWORD = "password",
 }
 export const EditAccountForm = () => {
-  const { fullName, phone } = useRouteLoaderData(
+  const { fullName, phone, id } = useRouteLoaderData(
     PageRoute.HOME
   ) as UserResponse;
 
-  const { formState, onChange } = useValidationForm([
+  const { formState, onChange, getFormStateAsMap } = useValidationForm([
     {
       defaultValue: fullName,
       errorPrefix: "Full Name:",
@@ -44,6 +46,7 @@ export const EditAccountForm = () => {
       },
       attributes: {
         placeholder: "Enter your phone number...",
+        type: "tel",
       },
     },
     {
@@ -66,12 +69,26 @@ export const EditAccountForm = () => {
       },
       attributes: {
         placeholder: "Enter new password... ",
+        type: "password",
       },
     },
   ]);
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
+    const formStateMap = getFormStateAsMap();
+    const detailsPromise = updateUserDetails(id, {
+      fullName: formStateMap.get(InputName.FULL_NAME),
+      phone: formStateMap.get(InputName.PHONE),
+      password: formStateMap.get(InputName.PASSWORD),
+      // bio: formStateMap.get(InputName.BIO),
+    });
+
+    toast.promise(detailsPromise, {
+      loading: "Updating details...",
+      success: "Details updated!",
+      error: (err) => `${err}`,
+    });
   };
 
   return (
