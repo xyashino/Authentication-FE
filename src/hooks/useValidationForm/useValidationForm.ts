@@ -13,8 +13,8 @@ export const useValidationForm = (inputData: IFormData[]) => {
 
   useLayoutEffect(() => {
     let isValid = true;
-    for (const { isValid: isFieldValid } of formState) {
-      if (!isFieldValid) {
+    for (const { isValid: isFieldValid, isEmpty } of formState) {
+      if (!isFieldValid || isEmpty) {
         isValid = false;
         break;
       }
@@ -51,9 +51,14 @@ export const useValidationForm = (inputData: IFormData[]) => {
     updateValue(value, name);
   };
 
+  const getFormStateAsMap = () => {
+    return new Map(formState.map((item) => [item.uniqueName, item.value]));
+  };
+
   return {
     formState,
     isFormValid,
     onChange: handleChange,
+    getFormStateAsMap,
   };
 };
