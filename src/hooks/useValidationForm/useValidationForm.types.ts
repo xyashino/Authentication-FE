@@ -3,7 +3,6 @@ export interface IValidationOptions {
   maxLength?: number;
   specialChars?: string[];
   includeSpace?: boolean;
-  linkWith?: { uniqueName: string; isConfirm: boolean };
   match?: {
     regexp: RegExp;
     errorMessage: string;
