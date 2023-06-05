@@ -9,6 +9,7 @@ import { NotFoundPage } from "@pages/NotFoundPage.tsx";
 import { ErrorElement } from "@ui/ErrorElement/ErrorElement.tsx";
 import { checkAuth } from "@utils/network/check-auth.ts";
 import { AuthProvider } from "@components/AuthProvider/AuthProvider.tsx";
+import { Toaster } from "react-hot-toast";
 
 const routes = createBrowserRouter([
   {
@@ -42,5 +43,6 @@ const routes = createBrowserRouter([
 export const App = () => (
   <Wrapper>
     <RouterProvider router={routes} />
+    <Toaster position="bottom-right" />
   </Wrapper>
 );
