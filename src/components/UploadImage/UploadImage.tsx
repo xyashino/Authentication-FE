@@ -1,10 +1,10 @@
 import { DragEvent, SyntheticEvent, useState } from "react";
 
 interface Props {
-  setUrl: (url: string) => void;
+  setImage: (file: File) => void;
 }
 
-export const UploadImage = ({ setUrl }: Props) => {
+export const UploadImage = ({ setImage }: Props) => {
   const [overDropZone, setOverDropZone] = useState(false);
 
   const clearPreventDefault = (e: SyntheticEvent, drag?: boolean) => {
@@ -18,8 +18,7 @@ export const UploadImage = ({ setUrl }: Props) => {
     setOverDropZone(false);
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
       const file = e.dataTransfer.files[0];
-      const url = URL.createObjectURL(file);
-      setUrl(url);
+      setImage(file);
     }
   };
 
@@ -27,8 +26,7 @@ export const UploadImage = ({ setUrl }: Props) => {
     e.preventDefault();
     const [file] = (e.target as HTMLInputElement).files ?? [];
     if (!file) return;
-    const url = URL.createObjectURL(file);
-    setUrl(url);
+    setImage(file);
   };
 
   return (
