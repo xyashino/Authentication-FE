@@ -11,7 +11,6 @@ import { PageRoute } from "@enums/page-route.enum.ts";
 enum InputNames {
   EMAIL = "email",
   PASSWORD = "password",
-  CONFIRM_PASSWORD = "confirmPassword",
   FULL_NAME = "fullName",
 }
 export const RegistrationForm = () => {
@@ -64,20 +63,6 @@ export const RegistrationForm = () => {
           icon: "mdi:lock",
           placeholder: "*********",
           label: "Password:",
-        },
-      },
-      {
-        uniqueName: InputNames.CONFIRM_PASSWORD,
-        errorPrefix: "",
-        defaultValue: "",
-        validationData: {
-          minLength: 8,
-        },
-        attributes: {
-          type: "password",
-          icon: "mdi:lock",
-          placeholder: "*********",
-          label: "Confirm Password:",
         },
       },
     ]);
