@@ -2,7 +2,7 @@ import { HTMLAttributes, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface Props extends HTMLAttributes<HTMLImageElement>, PropsWithChildren {
-  src?: string;
+  src?: string | null;
 }
 
 export const Avatar = ({ src, children, className, ...rest }: Props) => {
