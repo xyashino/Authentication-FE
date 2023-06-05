@@ -2,7 +2,7 @@ import { AxiosSetup } from "@utils/network/axios-setup.ts";
 import { Api } from "@enums/api.enum.ts";
 import { AxiosError } from "axios";
 import { UserUpdate } from "@backendTypes";
-import { handleErrors } from "@utils/handl-errors.ts";
+import { handleErrors } from "@utils/handle-errors.ts";
 
 export const validateUserData = (data: Partial<UserUpdate>) => {
   const { password, phone, fullName } = data;
