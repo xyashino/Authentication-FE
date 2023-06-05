@@ -19,9 +19,16 @@ export const UploadImage = ({ setUrl }: Props) => {
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
       const file = e.dataTransfer.files[0];
       const url = URL.createObjectURL(file);
-      console.log(url);
       setUrl(url);
     }
+  };
+
+  const handleFileInput = (e: SyntheticEvent) => {
+    e.preventDefault();
+    const [file] = (e.target as HTMLInputElement).files ?? [];
+    if (!file) return;
+    const url = URL.createObjectURL(file);
+    setUrl(url);
   };
 
   return (
@@ -41,8 +48,16 @@ export const UploadImage = ({ setUrl }: Props) => {
         </div>
       )}
       <p className="text-2xl font-bold uppercase italic text-white text-center">
-        Przeciągnij i upuść obraz tutaj
+        Drag and drop File
+        <br />
+        or
       </p>
+      <input
+        onChange={handleFileInput}
+        type="file"
+        accept="image/*"
+        className="file:rounded-xl file:border-0 file:p-2 file:bg-emerald-50/80 file:font-bold cursor-pointer hover:scale-110 transition-transform ml-10"
+      />
     </div>
   );
 };
