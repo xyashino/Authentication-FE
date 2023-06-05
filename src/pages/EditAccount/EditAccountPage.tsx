@@ -6,10 +6,14 @@ import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import { PageRoute } from "@enums/page-route.enum.ts";
 import { UserResponse } from "@backendTypes";
 import { Icon } from "@iconify/react";
+import { Modal } from "@ui/Modal/Modal.tsx";
+import { useModal } from "@hooks/useModal.tsx";
+import { ChangeAvatar } from "@components/Modals/ChangeAvatar.tsx";
 
 export const EditAccountPage = () => {
   const { avatar } = useRouteLoaderData(PageRoute.HOME) as UserResponse;
   const navigate = useNavigate();
+  const { isOpen, closeModal, openModal } = useModal();
   const handleClick = (e: SyntheticEvent) => {
     e.preventDefault();
     navigate(-1);
@@ -31,19 +35,25 @@ export const EditAccountPage = () => {
             Changes will be reflected on this service
           </p>
         </div>
-        <button className="appearance-none flex items-center hover:bg-emerald-600/50 transform-colors p-2 rounded">
+        <button
+          className="appearance-none flex items-center hover:bg-emerald-600/50 transform-colors px-8 py-2 rounded"
+          onClick={openModal}
+        >
           <Avatar className="w-24" src={avatar ?? undefined}>
-            <button className=" absolute top-0 left-0 w-full h-full bg-slate-600/50 flex items-center justify-center text-5xl">
+            <div className=" absolute top-0 left-0 w-full h-full bg-slate-600/50 flex items-center justify-center text-5xl">
               <Icon
                 icon="ic:round-add-a-photo"
                 className="aspect-square text-emerald-50"
               />
-            </button>
+            </div>
           </Avatar>
           <p className="font-bold text-emerald-50 ml-4">CHANGE PHOTO</p>
         </button>
         <EditAccountForm />
       </Card>
+      <Modal open={isOpen} onClose={closeModal} boxClassName="w-1/2">
+        <ChangeAvatar />
+      </Modal>
     </>
   );
 };
