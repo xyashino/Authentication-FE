@@ -41,11 +41,11 @@ const routes = createBrowserRouter([
   },
   {
     path: PageRoute.PROVIDER_SUCCESS,
-    element: <ProviderAuth />,
+    element: <ProviderAuth isSuccessful={true} />,
   },
   {
     path: PageRoute.PROVIDER_FAILURE,
-    element: <ProviderAuth />,
+    element: <ProviderAuth isSuccessful={false} />,
   },
 ]);
 
