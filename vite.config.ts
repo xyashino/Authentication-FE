@@ -17,6 +17,7 @@ export default defineConfig({
       "@enums": resolve(__dirname, "./src/enums"),
       "@hooks": resolve(__dirname, "./src/hooks"),
       "@utils": resolve(__dirname, "./src/utils"),
+      "@constants": resolve(__dirname, "./src/constants"),
     },
   },
 });

@@ -1,8 +1,8 @@
 import { AuthenticationCard } from "@components/layout/AuthenticationCard/AuthenticationCard.tsx";
-import { LoginForm } from "@components/forms/LoginForm.tsx";
 import { AuthorInfo } from "@ui/AuthorInfo/AuthorInfo.tsx";
 import { AuthenticationPrompt } from "@ui/AuthenticationPrompt/AuthenticationPrompt.tsx";
 import { PageRoute } from "@enums/page-route.enum.ts";
+import { LoginForm } from "@components/forms/LoginForm/LoginForm.tsx";
 
 export const LoginPage = () => {
   return (

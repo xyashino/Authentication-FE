@@ -8,16 +8,20 @@ import { EditAccountPage } from "@pages/EditAccount/EditAccountPage.tsx";
 import { NotFoundPage } from "@pages/NotFoundPage.tsx";
 import { ErrorElement } from "@ui/ErrorElement/ErrorElement.tsx";
 import { checkAuth } from "@utils/network/check-auth.ts";
+import { AuthProvider } from "@components/AuthProvider/AuthProvider.tsx";
+import { Toaster } from "react-hot-toast";
 
 const routes = createBrowserRouter([
   {
     path: PageRoute.HOME,
+    element: <AuthProvider />,
+    id: PageRoute.HOME,
     children: [
       { path: PageRoute.PROFILE, element: <PersonalInfoPage /> },
       { path: PageRoute.PROFILE_EDIT, element: <EditAccountPage /> },
     ],
     errorElement: <ErrorElement />,
-    loader: () => checkAuth(),
+    loader: checkAuth,
   },
   {
     path: PageRoute.LOGIN,
@@ -39,5 +43,6 @@ const routes = createBrowserRouter([
 export const App = () => (
   <Wrapper>
     <RouterProvider router={routes} />
+    <Toaster position="bottom-right" />
   </Wrapper>
 );

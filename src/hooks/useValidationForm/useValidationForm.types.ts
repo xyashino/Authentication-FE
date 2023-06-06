@@ -1,13 +1,13 @@
 export interface IValidationOptions {
-  minLength: number;
+  minLength?: number;
   maxLength?: number;
   specialChars?: string[];
   includeSpace?: boolean;
-  linkWith?: { uniqueName: string; isConfirm: boolean };
   match?: {
     regexp: RegExp;
     errorMessage: string;
   };
+  canBeEmpty?: true;
 }
 
 export interface IFormInput {

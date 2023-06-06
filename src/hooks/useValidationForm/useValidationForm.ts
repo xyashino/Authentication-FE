@@ -1,4 +1,4 @@
-import { ChangeEvent, useLayoutEffect, useState } from "react";
+import { SyntheticEvent, useLayoutEffect, useState } from "react";
 import { IFormData } from "./useValidationForm.types.ts";
 import {
   generateInitialFormState,
@@ -13,8 +13,8 @@ export const useValidationForm = (inputData: IFormData[]) => {
 
   useLayoutEffect(() => {
     let isValid = true;
-    for (const { isValid: isFieldValid } of formState) {
-      if (!isFieldValid) {
+    for (const { isValid: isFieldValid, isEmpty } of formState) {
+      if (!isFieldValid || isEmpty) {
         isValid = false;
         break;
       }
@@ -45,15 +45,20 @@ export const useValidationForm = (inputData: IFormData[]) => {
     setFormState(copyArray);
   };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: SyntheticEvent) => {
     e.preventDefault();
-    const { name, value } = e.target;
+    const { name, value } = e.target as HTMLInputElement;
     updateValue(value, name);
+  };
+
+  const getFormStateAsMap = () => {
+    return new Map(formState.map((item) => [item.uniqueName, item.value]));
   };
 
   return {
     formState,
     isFormValid,
     onChange: handleChange,
+    getFormStateAsMap,
   };
 };

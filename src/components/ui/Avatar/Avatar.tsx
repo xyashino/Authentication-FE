@@ -2,14 +2,11 @@ import { HTMLAttributes, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface Props extends HTMLAttributes<HTMLImageElement>, PropsWithChildren {
-  src?: string;
+  src?: string | null;
 }
 
 export const Avatar = ({ src, children, className, ...rest }: Props) => {
-  const imageClasses = twMerge(
-    "aspect-square w-8 mr-5 rounded",
-    className ?? ""
-  );
+  const imageClasses = twMerge("aspect-square w-8  rounded", className ?? "");
 
   return (
     <div className="relative">

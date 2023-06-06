@@ -18,7 +18,7 @@ export const Input = ({
   );
 
   const inputClasses = twMerge(
-    "placeholder:font-bold placeholder:text-emerald-50/80  w-full bg-transparent transition-colors py-2 px-4 border-2 border-emerald-50/50 rounded-lg text-gray-700 focus:border-emerald-600 focus:shadow-2xl focus:shadow focus:outline-none text-md w-full",
+    "placeholder:italic placeholder:text-emerald-50/80  w-full bg-transparent transition-colors py-2 px-4 border-2 border-emerald-50/50 rounded-lg text-gray-700 focus:border-emerald-600 focus:shadow-2xl focus:shadow focus:outline-none text-md w-full",
     className
   );
 
