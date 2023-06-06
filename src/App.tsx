@@ -10,6 +10,7 @@ import { ErrorElement } from "@ui/ErrorElement/ErrorElement.tsx";
 import { checkAuth } from "@utils/network/check-auth.ts";
 import { AuthProvider } from "@components/AuthProvider/AuthProvider.tsx";
 import { Toaster } from "react-hot-toast";
+import { ProviderAuth } from "@pages/ProviderAuth.tsx";
 
 const routes = createBrowserRouter([
   {
@@ -37,6 +38,14 @@ const routes = createBrowserRouter([
     path: PageRoute.EVERYTHING,
     element: <NotFoundPage />,
     errorElement: <ErrorElement />,
+  },
+  {
+    path: PageRoute.PROVIDER_SUCCESS,
+    element: <ProviderAuth />,
+  },
+  {
+    path: PageRoute.PROVIDER_FAILURE,
+    element: <ProviderAuth />,
   },
 ]);
 
