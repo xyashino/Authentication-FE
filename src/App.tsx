@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  redirect,
+  RouterProvider,
+} from "react-router-dom";
 import { Wrapper } from "@layout/Wrapper/Wrapper.tsx";
 import { PageRoute } from "@enums/page-route.enum.ts";
 import { LoginPage } from "@pages/Login/LoginPage.tsx";
@@ -10,7 +14,6 @@ import { ErrorElement } from "@ui/ErrorElement/ErrorElement.tsx";
 import { checkAuth } from "@utils/network/check-auth.ts";
 import { AuthProvider } from "@components/AuthProvider/AuthProvider.tsx";
 import { Toaster } from "react-hot-toast";
-import { ProviderAuth } from "@pages/ProviderAuth.tsx";
 
 const routes = createBrowserRouter([
   {
@@ -40,12 +43,13 @@ const routes = createBrowserRouter([
     errorElement: <ErrorElement />,
   },
   {
-    path: PageRoute.PROVIDER_SUCCESS,
-    element: <ProviderAuth isSuccessful={true} />,
-  },
-  {
-    path: PageRoute.PROVIDER_FAILURE,
-    element: <ProviderAuth isSuccessful={false} />,
+    path: PageRoute.PROVIDER_RESULT,
+    loader: ({ params }) => {
+      const { result } = params;
+      if (!result) return redirect(PageRoute.LOGIN);
+      if (result === "success") return redirect(PageRoute.PROFILE);
+      return redirect(PageRoute.LOGIN);
+    },
   },
 ]);
 
