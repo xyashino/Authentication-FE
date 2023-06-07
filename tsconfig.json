@@ -23,7 +23,7 @@
       "@*": ["src/*"],
       "@ui/*": ["src/components/ui/*"],
       "@layout/*": ["src/components/layout/*"],
-      "@backendTypes": ["../authentication-be/src/types/"]
+      "@backendTypes": ["../Authentication-BE/src/types/"]
     }
   },
   "include": ["src"],
