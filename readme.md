@@ -37,7 +37,7 @@ The app is deployed on **[MyDevil.net](https://www.mydevil.net/)**.
 - A **drag & drop** feature for **file** uploading.
 - A custom modal, built with the **HTML dialog** element.
 - Communication with the backend using **Axios**.
-- Compact, concise components, as I endeavored to make the components as small and efficient as possible
+- Compact, concise components, as I try to make the components as small as possible
 
 ## App Visualization:
 
