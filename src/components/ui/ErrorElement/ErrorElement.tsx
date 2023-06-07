@@ -6,7 +6,7 @@ export const ErrorElement = () => {
   return (
     <div className="flex w-full flex-col items-center justify-center p-4">
       <div className="relative select-none">
-        <h1 className="text-7xl lg:text-9xl font-bold text-emerald-50/50 uppercase">
+        <h1 className="text-7xl font-bold uppercase text-emerald-50/50 lg:text-9xl">
           Error
         </h1>
         <p className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 -rotate-12 rounded-2xl bg-emerald-600 px-4 text-center font-bold uppercase text-emerald-50 text-md">
@@ -14,9 +14,9 @@ export const ErrorElement = () => {
         </p>
       </div>
 
-      <div className="p-4 m-2 bg-emerald-50/50 rounded shadow max-w-screen-sm lg:max-w-screen-lg break-words ">
+      <div className="m-2 max-w-screen-sm break-words rounded bg-emerald-50/50 p-4 shadow lg:max-w-screen-lg">
         <p>
-          <span className="font-bold text-red-700 uppercase">Message:</span>{" "}
+          <span className="font-bold uppercase text-red-700">Message:</span>{" "}
           {error.message ?? "Unknown Message"}
         </p>
       </div>

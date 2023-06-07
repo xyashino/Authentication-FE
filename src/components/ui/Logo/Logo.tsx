@@ -15,11 +15,16 @@ export const Logo = ({ navigateToHome }: Props) => {
   };
   return (
     <button
-      className="appearance-none flex cursor-pointer select-none items-center justify-center transition-transform hover:scale-110"
+      className="flex cursor-pointer select-none appearance-none items-center justify-center transition-transform hover:scale-110"
       onClick={handleClick}
     >
-      <img src={logo} alt="logo" className="h-16 w-16" draggable={false} />
-      <h2 className="text-xl font-bold capitalize text-emerald-900">
+      <img
+        src={logo}
+        alt="logo"
+        className="aspect-square w-8 lg:w-16"
+        draggable={false}
+      />
+      <h2 className="font-bold capitalize italic text-emerald-900 lg:text-xl">
         Authentication App
       </h2>
     </button>

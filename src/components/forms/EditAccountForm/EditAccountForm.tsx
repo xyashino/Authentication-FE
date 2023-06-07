@@ -1,7 +1,7 @@
 import { TextArea } from "@ui/TextArea/TextArea.tsx";
 import { Button } from "@ui/Button/Button.tsx";
 import { SyntheticEvent } from "react";
-import { useRouteLoaderData } from "react-router-dom";
+import { useRevalidator, useRouteLoaderData } from "react-router-dom";
 import { PageRoute } from "@enums/page-route.enum.ts";
 import { UserResponse } from "@backendTypes";
 import { useValidationForm } from "@hooks/useValidationForm";
@@ -20,6 +20,7 @@ export const EditAccountForm = () => {
   const { fullName, phone, id } = useRouteLoaderData(
     PageRoute.HOME
   ) as UserResponse;
+  const { revalidate } = useRevalidator();
 
   const { formState, onChange, getFormStateAsMap } = useValidationForm([
     {
@@ -81,12 +82,15 @@ export const EditAccountForm = () => {
       fullName: formStateMap.get(InputName.FULL_NAME),
       phone: formStateMap.get(InputName.PHONE),
       password: formStateMap.get(InputName.PASSWORD),
-      // bio: formStateMap.get(InputName.BIO),
+      bio: formStateMap.get(InputName.BIO),
     });
 
     toast.promise(detailsPromise, {
       loading: "Updating details...",
-      success: "Details updated!",
+      success: () => {
+        revalidate();
+        return "Details updated!";
+      },
       error: (err) => `${err}`,
     });
   };
@@ -103,7 +107,7 @@ export const EditAccountForm = () => {
           error,
           ...attributes,
           onChange,
-          wrapperClassName: "w-4/5",
+          wrapperClassName: "w-full lg:w-4/5",
         };
         return uniqueName === InputName.BIO ? (
           <TextArea {...m} />

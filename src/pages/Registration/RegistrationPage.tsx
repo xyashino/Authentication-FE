@@ -8,9 +8,6 @@ export const RegistrationPage = () => {
   return (
     <>
       <AuthenticationCard>
-        <h3 className="text-center text-lg font-bold capitalize text-gray-700">
-          Create Account
-        </h3>
         <RegistrationForm />
         <AuthenticationPrompt
           question="Already member?"

@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import { ButtonHTMLAttributes, SyntheticEvent } from "react";
 import { twMerge } from "tailwind-merge";
+
 interface Props
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "onClick"> {
   icon: string;
@@ -9,6 +10,7 @@ interface Props
 }
 
 const { VITE_BE_URL } = import.meta.env;
+
 export const SocialButton = ({
   icon,
   className,
@@ -21,7 +23,6 @@ export const SocialButton = ({
     className
   );
   const iconClasses = twMerge("text-3xl", iconClassName);
-
   const handleCLick = async (e: SyntheticEvent) => {
     e.preventDefault();
     window.location.href = `${VITE_BE_URL}/auth/${provider}`;

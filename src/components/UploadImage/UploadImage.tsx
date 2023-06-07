@@ -31,7 +31,7 @@ export const UploadImage = ({ setImage }: Props) => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center w-full h-52 border-2 p-2 m-4 rounded-xl  border-emerald-700  bg-emerald-500/60 relative"
+      className="relative flex w-full flex-col items-center justify-center rounded-xl border-2 border-emerald-700 bg-emerald-500/60 py-4 lg:my-4"
       onDragEnter={(e) => clearPreventDefault(e, true)}
       onDragLeave={(e) => clearPreventDefault(e, false)}
       onDragEnd={(e) => clearPreventDefault(e, false)}
@@ -39,13 +39,13 @@ export const UploadImage = ({ setImage }: Props) => {
       onDrop={onDrop}
     >
       {overDropZone && (
-        <div className="absolute w-full h-full bg-gray-400 bg-opacity-50 flex items-center justify-center">
-          <p className="text-2xl font-bold text-emerald-700 uppercase">
+        <div className="absolute flex h-full w-full items-center justify-center bg-gray-400 bg-opacity-50">
+          <p className="text-2xl font-bold uppercase text-emerald-700">
             Upuść tutaj plik
           </p>
         </div>
       )}
-      <p className="text-2xl font-bold uppercase italic text-white text-center">
+      <p className="text-center text-2xl font-bold uppercase italic text-white">
         Drag and drop File
         <br />
         or
@@ -54,7 +54,7 @@ export const UploadImage = ({ setImage }: Props) => {
         onChange={handleFileInput}
         type="file"
         accept="image/*"
-        className="file:rounded-xl file:border-0 file:p-2 file:bg-emerald-50/80 file:font-bold cursor-pointer hover:scale-110 transition-transform ml-10"
+        className="cursor-pointer file:rounded-xl file:border-0 file:bg-emerald-50/80 file:p-2 file:font-bold transition-transform hover:scale-110"
       />
     </div>
   );

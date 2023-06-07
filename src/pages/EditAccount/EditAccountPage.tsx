@@ -36,22 +36,26 @@ export const EditAccountPage = () => {
           </p>
         </div>
         <button
-          className="appearance-none flex items-center hover:bg-emerald-600/50 transform-colors px-8 py-2 rounded"
+          className="flex appearance-none items-center rounded px-8 py-2 transform-colors hover:bg-emerald-600/50"
           onClick={openModal}
         >
           <Avatar className="w-24" src={avatar ?? undefined}>
-            <div className=" absolute top-0 left-0 w-full h-full bg-slate-600/50 flex items-center justify-center text-5xl">
+            <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center bg-slate-600/50 text-5xl">
               <Icon
                 icon="ic:round-add-a-photo"
                 className="aspect-square text-emerald-50"
               />
             </div>
           </Avatar>
-          <p className="font-bold text-emerald-50 ml-4">CHANGE PHOTO</p>
+          <p className="ml-4 font-bold text-emerald-50">CHANGE PHOTO</p>
         </button>
         <EditAccountForm />
       </Card>
-      <Modal open={isOpen} onClose={closeModal} boxClassName="w-1/2">
+      <Modal
+        open={isOpen}
+        onClose={closeModal}
+        boxClassName="w-11/12 lg:w-1/2 xl:w-1/3"
+      >
         <ChangeAvatar />
       </Modal>
     </>

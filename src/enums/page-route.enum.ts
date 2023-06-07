@@ -5,4 +5,5 @@ export const enum PageRoute {
   PROFILE = "/profile",
   PROFILE_EDIT = "/profile/edit",
   EVERYTHING = "*",
+  PROVIDER_RESULT = "/provider/:result",
 }

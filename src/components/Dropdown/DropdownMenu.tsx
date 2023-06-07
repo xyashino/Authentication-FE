@@ -9,12 +9,12 @@ import { Logout } from "@components/Modals/ChangeAvatar/Logout.tsx";
 export const DropdownMenu = () => {
   const { isOpen, openModal, closeModal } = useModal();
   const listStyles =
-    "text-lg border-b-2 p-1 hover:bg-emerald-800 hover:text-sky-50 font-bold uppercase text-gray-600 cursor-pointer transition-colors rounded px-2 flex items-center";
+    "text-sm border-b-2 py-4 hover:bg-emerald-800 hover:text-sky-50 font-bold uppercase text-gray-600 cursor-pointer transition-colors rounded px-2 flex items-center";
   return (
     <>
-      <nav className="flex w-full flex-col text-sm shadow-xl">
+      <nav className="flex w-full flex-col shadow-xl lg:text-lg">
         <NavLink to={PageRoute.PROFILE} role="menuitem" className={listStyles}>
-          <Icon icon="mdi:account" className="mr-2" />
+          <Icon icon="mdi:account" className="mr-1 lg:mr-2" />
           ACCOUNT
         </NavLink>
         <NavLink
@@ -22,7 +22,7 @@ export const DropdownMenu = () => {
           role="menuitem"
           className={listStyles}
         >
-          <Icon icon="mdi:edit" className="mr-2" />
+          <Icon icon="mdi:edit" className="mr-1 lg:mr-2" />
           Edit Profile
         </NavLink>
         <button
@@ -33,11 +33,15 @@ export const DropdownMenu = () => {
           role="menuitem"
           onClick={openModal}
         >
-          <Icon icon="mdi:logout" className="mr-2" />
+          <Icon icon="mdi:logout" className="mr-1 lg:mr-2" />
           Logout
         </button>
       </nav>
-      <Modal open={isOpen} onClose={closeModal} boxClassName="w-1/3">
+      <Modal
+        open={isOpen}
+        onClose={closeModal}
+        boxClassName="w-11/12 sm:w-1/2 lg:w-1/3 px-4 mx-4"
+      >
         <Logout closeModal={closeModal} />
       </Modal>
     </>

@@ -9,11 +9,11 @@ interface Props {
 
 export const AuthenticationPrompt = ({ linkText, linkTo, question }: Props) => {
   return (
-    <p className="m-3 w-full pb-1 text-center text-sm font-bold text-emerald-50 uppercase font-mono">
+    <p className="m-3 w-full pb-1 text-center font-mono text-sm font-bold uppercase text-emerald-50">
       {question}
       <Link
         to={linkTo}
-        className="ml-1 cursor-pointer font-bold uppercase text-emerald-900 hover:underline italic"
+        className="ml-1 cursor-pointer font-bold uppercase italic text-emerald-900 hover:underline"
       >
         {linkText}
       </Link>

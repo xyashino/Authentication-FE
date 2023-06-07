@@ -48,7 +48,7 @@ export const Modal = ({
   if (portalElement === null) return null;
 
   const boxClasses = twMerge(
-    "inline-block bg-emerald-50 rounded-lg text-left overflow-hidden shadow-xl transform transition-all animate-show-modal px-8 py-6 relative",
+    "inline-block bg-emerald-50 rounded-lg text-left overflow-y-scroll overflow-x-hidden max-h-[95vh] shadow-xl transform transition-all animate-show-modal relative",
     boxClassName
   );
 
@@ -56,17 +56,17 @@ export const Modal = ({
     <div
       ref={ref}
       onClick={handleOverlayClick}
-      className="fixed z-10 inset-0 overflow-y-auto bg-emerald-800/50 grid place-items-center"
+      className="fixed inset-0 z-10 grid place-items-center overflow-y-hidden bg-emerald-800/50"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
     >
       <div className={boxClasses}>
         <button
-          className="hover:scale-110 hover:rotate-12 transition-transform top-0 right-0 p-2 absolute"
+          className="absolute top-0 right-0 p-2 transition-transform hover:rotate-12 hover:scale-110"
           onClick={onClose}
         >
-          <Icon icon="mdi:close" className="text-emerald-600 text text-3xl" />
+          <Icon icon="mdi:close" className="text-3xl text-emerald-600 text" />
         </button>
         <div>{children}</div>
       </div>

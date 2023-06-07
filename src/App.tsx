@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  redirect,
+  RouterProvider,
+} from "react-router-dom";
 import { Wrapper } from "@layout/Wrapper/Wrapper.tsx";
 import { PageRoute } from "@enums/page-route.enum.ts";
 import { LoginPage } from "@pages/Login/LoginPage.tsx";
@@ -37,6 +41,15 @@ const routes = createBrowserRouter([
     path: PageRoute.EVERYTHING,
     element: <NotFoundPage />,
     errorElement: <ErrorElement />,
+  },
+  {
+    path: PageRoute.PROVIDER_RESULT,
+    loader: ({ params }) => {
+      const { result } = params;
+      if (!result) return redirect(PageRoute.LOGIN);
+      if (result === "success") return redirect(PageRoute.PROFILE);
+      return redirect(PageRoute.LOGIN);
+    },
   },
 ]);
 
