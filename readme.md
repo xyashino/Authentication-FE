@@ -31,31 +31,43 @@ The app is deployed on **[MyDevil.net](https://www.mydevil.net/)**.
 ![TAILWIND](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![VITE](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-# App Visualization:
+### This is a simple frontend application that contains:
 
-## Login Using Providers
+- Dynamic forms built by only **React**, using **custom hooks**.
+- A **drag & drop** feature for **file** uploading.
+- A custom modal, built with the **HTML dialog** element.
+- Communication with the backend using **Axios**.
+- Compact, concise components, as I endeavored to make the components as small and efficient as possible
 
-- **Facebook**
+## App Visualization:
+
+### Login Using Providers
+
+    Facebook
+
 <div align="center">
     <img src="demo/facebook.gif" alt="Facebook"/>
 </div>
 
-- **Google**
+    Google
+
 <div align="center">
     <img src="demo/google.gif" alt="Google"/>
 </div>
 
-- **LinkedIn**
+    LinkedIn
+
 <div align="center">
     <img src="demo/linkedin.gif" alt="LinkedIn"/>
 </div>
 
-- **GitHub**
+    GitHub
+
 <div align="center">
     <img src="demo/github.gif" alt="GitHub"/>
 </div>
 
-## Change Avatar
+### Change Avatar
 
 <div align="center">
     <img src="demo/avatar.gif" alt="Avatar"/>
@@ -79,4 +91,21 @@ yarn
 
 ```
 yarn dev
+```
+
+## CONFIGURATION
+
+This app requires a `.env` file if the backend server isn't running at the default local domain (http://localhost:3000). For example, if the server is running on http://localhost:3001, then you need to create a .env file in the **root** directory:
+
+```.dotenv
+    VITE_BE_URL = http://localhost:3001
+```
+
+In the `tsconfig.json` file, there is an important alias `@backendTypes`. If you've installed the backend in a directory other than the default, you'll need to change this alias to point to your backend directory. To avoid this issue, you can install the backend in the same directory as the frontend.
+
+```json
+"paths": {
+    ...
+    "@backendTypes": ["../authentication-be/src/types/"]
+}
 ```
