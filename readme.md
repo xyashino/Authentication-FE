@@ -17,7 +17,7 @@ This is a full-stack application. The frontend is developed using **React** and 
 ## You can find a live demo here: [DEMO](https://authentication.yashino.live/)
 
 ```
-email: test@gmailcom
+email: test@gmail.com
 password: 12345678
 ```
 
